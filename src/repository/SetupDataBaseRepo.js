@@ -1,31 +1,32 @@
+const database = [
+    {
+        id: 1,
+        owner: "Daniel",
+        processor: "i5-7400",
+        ram: "16GB"
+    },
+    {
+        id: 2,
+        owner: "Luca",
+        processor: "Celeron",
+        ram: "512Mb"
+    },
+    {
+        id: 3,
+        owner: "Renan",
+        processor: "AMD Ryzen 3600",
+        ram: "8GB"
+    }
+];
 const DBDriver = function () {
-    const database = [
-        {
-            id: 1,
-            owner: "Daniel",
-            processor: "i5-7400",
-            ram: "16GB"
-        },
-        {
-            id: 2,
-            owner: "Luca",
-            processor: "Celeron",
-            ram: "512Mb"
-        },
-        {
-            id: 3,
-            owner: "Renan",
-            processor: "AMD Ryzen 3600",
-            ram: "8GB"
-        }
-    ];
+
     const select = function () {
         return database;
     };
     const insert = function (setup) {
         database.push(setup)
 
-        return setup;
+        return database;
     };
     const drop = function (id) {
         const index = database.findIndex(setup => setup.id == id);
@@ -50,9 +51,7 @@ const all = function () {
 
 const create = function (setup) {
 
-    DBDriver().insert(setup);
-
-    return data;
+    return DBDriver().insert(setup);
 }
 
 const drop = function (id) {

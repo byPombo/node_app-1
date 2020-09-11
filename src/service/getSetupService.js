@@ -6,9 +6,9 @@ module.exports = {
         console.log(repository.all());
     },
     createNewSetup(setup){
-        // TODO: implementar criação de setup
+        return repository.create(setup);
     },
     dropSetup(id){
-        // TODO: implementar exclusão de setup
+        repository.drop(id);
     }
 }
